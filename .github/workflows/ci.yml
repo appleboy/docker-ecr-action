@@ -1,0 +1,21 @@
+name: discord message
+on: [push]
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: upload image to ECR
+      uses: ./
+      with:
+        access_key: ${{ secrets.HOST }}
+        secret_key: ${{ secrets.USERNAME }}
+        registry: ${{ secrets.USERNAME }}
+        cache_from: ${{ secrets.USERNAME }}
+        repo: api-sample
+        region: ap-northeast-1
+        auto_tag: true
+        daemon_off: false
+        dockerfile: example/Dockerfile
