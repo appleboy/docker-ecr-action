@@ -8,6 +8,7 @@ inputs:
     description: 'amazon secret access key'
   region:
     description: 'amazon region, defaults to us-east-1'
+    default: 'us-east-1'
   repo:
     description: 'repository name for the image'
   lifecycle_policy:
@@ -16,8 +17,10 @@ inputs:
     description: 'filename of ecr repository json policy'
   tags:
     description: 'repository tag for the image, defaults to latest'
+    default: 'latest'
   dockerfile:
     description: 'dockerfile to be used, defaults to Dockerfile'
+    default: 'Dockerfile'
   auth:
     description: 'auth token for the registry'
   context:
