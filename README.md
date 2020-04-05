@@ -2,7 +2,7 @@
 
 [GitHub Action](https://developer.github.com/actions/) for uploading Docker Image to Amazon Elastic Container Registry (ECR).
 
-[![Actions Status](https://github.com/appleboy/discord-action/workflows/discord%20message/badge.svg)](https://github.com/appleboy/discord-action/actions)
+![Docker ECR](https://github.com/appleboy/docker-ecr-action/workflows/Docker%20ECR/badge.svg?branch=master&event=push)
 
 ![Amazon ECR](./images/Amazon_ECR.png)
 
