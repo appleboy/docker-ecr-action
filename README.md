@@ -16,7 +16,7 @@ Upload docker image to Amazon Elastic Container Registry (ECR)
 
 ```yml
 - name: upload image to ECR
-  uses: ./
+  uses: appleboy/docker-ecr-action@master
   with:
     access_key: ${{ secrets.aws_access_key_id }}
     secret_key: ${{ secrets.aws_secret_access_key }}
@@ -59,7 +59,7 @@ The ECR plugin can be used to build and publish images to the Amazon ECR registr
 
 ```yaml
 - name: upload image to ECR
-  uses: appleboy/drone-ecr
+  uses: appleboy/docker-ecr-action@master
   with:
     access_key: a50d28f4dd477bc184fbd10b376de753
     secret_key: bc5785d3ece6a9cdefa42eb99b58986f9095ff1c
@@ -71,7 +71,7 @@ Example configuration using multiple tags:
 
 ```yaml
 - name: upload image to ECR
-  uses: appleboy/drone-ecr
+  uses: appleboy/docker-ecr-action@master
   with:
     repo: bar
     registry: <account_id>.dkr.ecr.us-east-1.amazonaws.com
@@ -82,7 +82,7 @@ Override the default region:
 
 ```yaml
 - name: upload image to ECR
-  uses: appleboy/drone-ecr
+  uses: appleboy/docker-ecr-action@master
   with:
     repo: bar
     registry: <account_id>.dkr.ecr.us-east-1.amazonaws.com
@@ -93,7 +93,7 @@ Override the default Dockerfile path:
 
 ```yaml
 - name: upload image to ECR
-  uses: appleboy/drone-ecr
+  uses: appleboy/docker-ecr-action@master
   with:
     repo: bar
     registry: <account_id>.dkr.ecr.us-east-1.amazonaws.com
@@ -104,9 +104,20 @@ Example configuration using build arguments:
 
 ```yaml
 - name: upload image to ECR
-  uses: appleboy/drone-ecr
+  uses: appleboy/docker-ecr-action@master
   with:
     repo: bar
     registry: <account_id>.dkr.ecr.us-east-1.amazonaws.com
     build_args: "HTTP_PROXY=http://yourproxy.com"
+```
+
+Example configuration using docker cache:
+
+```yaml
+- name: upload image to ECR
+  uses: appleboy/docker-ecr-action@master
+  with:
+    repo: bar
+    registry: <account_id>.dkr.ecr.us-east-1.amazonaws.com
+    cache_from: <account_id>.dkr.ecr.us-east-1.amazonaws.com/bar
 ```
