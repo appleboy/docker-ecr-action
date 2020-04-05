@@ -34,8 +34,6 @@ inputs:
     description: 'set custom dns servers for the container'
   storage_driver:
     description: 'supports aufs, overlay or vfs drivers'
-  build_args:
-    description: 'custom arguments passed to docker build'
   cache_from:
     description: 'images to consider as cache sources'
   auto_tag:
