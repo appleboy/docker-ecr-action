@@ -1,4 +1,4 @@
-FROM appleboy/docker-ecr
+FROM appleboy/drone-ecr
 
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
