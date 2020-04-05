@@ -19,3 +19,4 @@ jobs:
         auto_tag: true
         daemon_off: false
         dockerfile: example/Dockerfile
+        context: example
