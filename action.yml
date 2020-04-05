@@ -1,31 +1,52 @@
-name: 'Discord Message Notify'
-description: 'Sending a Discord message'
+name: 'Docker ECR'
+description: 'Upload Docker Image to Amazon Elastic Container Registry (ECR)'
 author: 'Bo-Yi Wu'
 inputs:
-  webhook_id:
-    description: 'discord webhook id'
-    required: true
-  webhook_token:
-    description: 'discord webhook token'
-    required: true
-  message:
-    description: 'the message contents (up to 2000 characters)'
-  file:
-    description: 'the contents of the file being sent'
-  color:
-    description: 'color code of the embed'
-  wait:
-    description: 'waits for server confirmation of message send before response, and returns the created message body'
-  tts:
-    description: 'true if this is a TTS message'
-  username:
-    description: 'override the default username of the webhook'
-  avatar_url:
-    description: 'override the default avatar of the webhook'
+  access_key:
+    description: 'amazon access key'
+  secret_key:
+    description: 'amazon secret access key'
+  region:
+    description: 'amazon region, defaults to us-east-1'
+  repo:
+    description: 'repository name for the image'
+  lifecycle_policy:
+    filename of ecr lifecycle json policy'
+  repository_policy:
+    description: 'filename of ecr repository json policy'
+  tags:
+    description: 'repository tag for the image, defaults to latest'
+  dockerfile:
+    description: 'dockerfile to be used, defaults to Dockerfile'
+  auth:
+    description: 'auth token for the registry'
+  context:
+    description: 'the context path to use, defaults to root of the git repo'
+  force_tag:
+    description: 'replace existing matched image tags'
+  insecure:
+    description: 'enable insecure communication to this registry'
+  mirror:
+    description: 'use a mirror registry instead of pulling images directly from the central Hub'
+  bip:
+    description: 'use for pass bridge ip'
+  custom_dns:
+    description: 'set custom dns servers for the container'
+  storage_driver:
+    description: 'supports aufs, overlay or vfs drivers'
+  build_args:
+    description: 'custom arguments passed to docker build'
+  cache_from:
+    description: 'images to consider as cache sources'
+  auto_tag:
+    description: 'default build tags'
+  daemon_off:
+    description: 'do not start the docker daemon'
+
 runs:
   using: 'docker'
   image: 'Dockerfile'
 
 branding:
-  icon: 'message-square'
-  color: 'gray-dark'
+  icon: 'cloud'
+  color: 'orange'
