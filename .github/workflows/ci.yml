@@ -10,10 +10,10 @@ jobs:
     - name: upload image to ECR
       uses: ./
       with:
-        access_key: ${{ secrets.HOST }}
-        secret_key: ${{ secrets.USERNAME }}
-        registry: ${{ secrets.USERNAME }}
-        cache_from: ${{ secrets.USERNAME }}
+        access_key: ${{ secrets.aws_access_key_id }}
+        secret_key: ${{ secrets.aws_secret_access_key }}
+        registry: ${{ secrets.registry }}
+        cache_from: ${{ secrets.cache }}
         repo: api-sample
         region: ap-northeast-1
         auto_tag: true
