@@ -22,6 +22,7 @@ inputs:
     description: 'auth token for the registry'
   context:
     description: 'the context path to use, defaults to root of the git repo'
+    default: '.'
   force_tag:
     description: 'replace existing matched image tags'
   insecure:
