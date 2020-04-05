@@ -1,4 +1,4 @@
-name: discord message
+name: Docker ECR
 on: [push]
 jobs:
 
