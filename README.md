@@ -68,6 +68,7 @@ Upload docker image to Amazon Elastic Container Registry (ECR)
 
 * access_key - amazon access key
 * secret_key - amazon secret access key
+* registry - amazone docker registry url
 * region - amazon region, defaults to us-east-1
 * repo - repository name for the image
 * lifecycle_policy - filename of ecr lifecycle json policy
