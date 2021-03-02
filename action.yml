@@ -6,6 +6,8 @@ inputs:
     description: 'amazon access key'
   secret_key:
     description: 'amazon secret access key'
+  registry:
+    description: 'docker registry'
   region:
     description: 'amazon region, defaults to us-east-1'
     default: 'us-east-1'
