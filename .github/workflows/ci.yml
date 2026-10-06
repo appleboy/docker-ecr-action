@@ -1,5 +1,7 @@
 name: Docker ECR
-on: [push]
+on:
+  push:
+    branches: [master]
 jobs:
 
   build:
