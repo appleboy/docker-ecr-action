@@ -39,7 +39,7 @@ inputs:
   custom_dns:
     description: 'set custom dns servers for the container'
   storage_driver:
-    description: 'supports aufs, overlay or vfs drivers'
+    description: 'Docker storage driver, such as overlay2 or vfs; legacy aufs and overlay are unsupported'
   cache_from:
     description: 'images to consider as cache sources'
   auto_tag:

@@ -82,7 +82,7 @@ Upload docker image to Amazon Elastic Container Registry (ECR)
 * mirror - use a mirror registry instead of pulling images directly from the central Hub
 * bip - use for pass bridge ip
 * custom_dns - set custom dns servers for the container
-* storage_driver - supports aufs, overlay or vfs drivers
+* storage_driver - Docker storage driver, such as overlay2 or vfs; legacy aufs and overlay are unsupported
 * build_args - custom arguments passed to docker build
 * cache_from - images to consider as cache sources
 * auto_tag: default build tags
@@ -156,3 +156,9 @@ Example configuration using docker cache:
     registry: <account_id>.dkr.ecr.us-east-1.amazonaws.com
     cache_from: <account_id>.dkr.ecr.us-east-1.amazonaws.com/bar
 ```
+
+### Container runtime compatibility
+
+The action rebuilds its original ECR plugin with a patched Go toolchain and uses Docker 29.8.2. The legacy `squash` option is accepted by Docker but has no effect with BuildKit. Use a multi-stage Dockerfile to control the final image contents.
+
+If you configured the removed `aufs` or `overlay` storage driver, migrate to `overlay2` (or `vfs` where required) before using this version.
